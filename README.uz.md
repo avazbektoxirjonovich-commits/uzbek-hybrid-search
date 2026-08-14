@@ -48,6 +48,12 @@ Tartiblangan matn bo'laklari
 - **Fusion:** `RRF(d) = Σ 1/(k + rank)`, `k=60`, har bir retrieverning top-20 nomzodini birlashtiradi
 - **Korpus:** o'zbek Wikipedia dumpidan tasodifiy, seed bilan tanlangan 15,000 ta maqola (`N_ARTICLES = 15000`, `RANDOM_SEED = 42`) — to'liq ~180k maqolali dump emas, manba izohlarida qayd etilgan mahalliy hisoblash/RAM cheklovi tufayli
 
+## Demo
+
+![Arxitektura](docs/architecture/pipeline.svg)
+
+Bu loyiha uchun GUI ataylab yo'q (bu chatbot emas, retrieval dvigateli) — yuqoridagi pipeline diagrammasiga qarang. Bu safar `demo.py`/`evaluate.py`ni haqiqatan ishga tushirib real baholash grafigini olishga urinildi, lekin `import sentence_transformers` bu muhitda segmentation fault beradi (shu sessiyada uchta alohida loyihada mustaqil ravishda takrorlangan — muhit muammosi, bu koddagi xato emas). `qa_pairs.json` mavjud emasligi bilan birga (pastga qarang), bu repo'da hech qanday baholash natijasi — real yoki boshqa — yo'q.
+
 ## Baholash
 
 `evaluate.py` haqiqiy solishtirish mexanizmini amalga oshiradi (Hit Rate@5 va F1, BM25-only / Dense-only / Hybrid bo'yicha), lekin **hech qanday baholash haqiqatan ishga tushirilmagan va saqlanmagan** — `qa_pairs.json` (zarur savol-javob benchmark to'plami) hozircha mavjud emas, `results.md` hech qachon yaratilmagan. Bu shu yerda o'ylab topilgan raqamlarni ko'rsatish o'rniga ochiqchasiga aytilmoqda: **bu repo'da baholash grafigi yo'q**, va quyidagi Roadmap buni ochiq ish sifatida ko'rsatadi.

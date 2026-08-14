@@ -48,6 +48,12 @@ Ranked article chunks
 - **Fusion:** `RRF(d) = Σ 1/(k + rank)`, `k=60`, combining the top-20 candidates from each retriever
 - **Corpus:** a random, seeded sample of 15,000 articles from the Uzbek Wikipedia dump (`N_ARTICLES = 15000`, `RANDOM_SEED = 42` in `config.py`) — not the full ~180k-article dump, due to local compute/RAM constraints noted in the source comments
 
+## Demo
+
+![Architecture](docs/architecture/pipeline.svg)
+
+No GUI exists for this project by design (it's a retrieval engine, not a chatbot) — see the pipeline diagram above. An attempt was made to actually execute `demo.py`/`evaluate.py` for this pass to produce a real evaluation chart, but `import sentence_transformers` segfaults in the environment used here (reproduced independently across three separate projects in the same session — an environment issue, not a bug in this code). Combined with `qa_pairs.json` not existing (below), no evaluation output — real or otherwise — is included in this repository.
+
 ## Evaluation
 
 `evaluate.py` implements a real comparison harness (Hit Rate@5 and F1, across BM25-only / Dense-only / Hybrid), but **no evaluation has actually been run and persisted** — `qa_pairs.json` (the required question/answer benchmark set) does not currently exist, and no `results.md` was ever generated. This is stated here explicitly rather than presenting invented numbers: **there is no evaluation chart in this repository**, and the Roadmap below lists this as open work.
