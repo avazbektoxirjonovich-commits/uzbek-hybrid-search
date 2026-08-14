@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0B6E75"/>
+    </marker>
+  </defs>
+  <rect width="700" height="560" fill="#FFFFFF"/>
+  <text x="350" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#16212C">Uzbek Hybrid Search — Pipeline</text>
+
+  <rect x="230" y="56" width="240" height="44" rx="10" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="350" y="83" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">Uzbek Wikipedia dump (source)</text>
+  <line x1="350" y1="100" x2="350" y2="132" stroke="#0B6E75" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="200" y="132" width="300" height="44" rx="10" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="350" y="159" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">extract → clean → chunk</text>
+  <line x1="350" y1="176" x2="350" y2="208" stroke="#0B6E75" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="200" y="208" width="300" height="44" rx="10" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="350" y="235" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">build_index.py</text>
+  <line x1="300" y1="252" x2="200" y2="284" stroke="#0B6E75" stroke-width="2"/>
+  <line x1="400" y1="252" x2="500" y2="284" stroke="#0B6E75" stroke-width="2"/>
+
+  <rect x="110" y="284" width="180" height="48" rx="10" fill="#DCEEEE" stroke="#0B6E75"/>
+  <text x="200" y="313" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">BM25 index</text>
+
+  <rect x="410" y="284" width="180" height="48" rx="10" fill="#DCEEEE" stroke="#0B6E75"/>
+  <text x="500" y="313" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">FAISS index (dense)</text>
+
+  <line x1="200" y1="332" x2="320" y2="364" stroke="#0B6E75" stroke-width="2"/>
+  <line x1="500" y1="332" x2="380" y2="364" stroke="#0B6E75" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="364" width="280" height="56" rx="10" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="350" y="388" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">Reciprocal Rank Fusion</text>
+  <text x="350" y="405" text-anchor="middle" font-size="10" fill="#55606B">RRF(d) = Σ 1 / (k + rank), k=60</text>
+  <line x1="350" y1="420" x2="350" y2="452" stroke="#0B6E75" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="452" width="280" height="48" rx="10" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="350" y="481" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">Cross-Encoder Rerank (optional)</text>
+  <line x1="350" y1="500" x2="350" y2="524" stroke="#0B6E75" stroke-width="2" marker-end="url(#a)"/>
+
+  <text x="350" y="544" text-anchor="middle" font-size="12" fill="#16212C" font-weight="600">Ranked article chunks</text>
+</svg>

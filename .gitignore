@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.venv_demo/
+
+# Source Wikipedia dump — 1.3GB, not reproducible to keep, regenerable via run_extractor.py
+uzwiki-*.xml
+
+# Generated intermediate/output data — all regenerable from the pipeline scripts
+wiki_output/
+articles.jsonl
+chunks.pkl
+index/
+*.log
+*_log.txt
